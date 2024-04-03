@@ -9,13 +9,17 @@
     font-size: 100%;}
 @font-face {font-family: "montserrat m";
         src: url("../fonts/Montserrat-Medium.woff");}
-        @font-face {font-family: "montserrat b";
+@font-face {font-family: "montserrat b";
             src: url("../fonts/Montserrat-Bold.woff");}
+@font-face {font-family: "montserrat black";
+                src: url("../fonts/Montserrat-Black.woff");}
+
+/*главная*/
 #headerIndex {width:100%;
               display:grid;
               height:68vmax;
               grid-template-columns: 100%;
-              grid-template-rows: 10% 10% 1fr;}
+              grid-template-rows: 10% 8% 1fr;}
 #navIndex {display:grid;
             grid-template-columns: 4.5% 40.5% 27% 10.5% 9.5% 1fr ;
             grid-template-rows: 100%;
@@ -24,7 +28,7 @@
     align-self: center;
     font-size: 1.8vmax;
     grid-column:2;
-    font-family: "montserrat m";}
+    font-family: "montserrat b";}
 #navIn2 {display:flex;
          justify-content: space-between;
          color:white;
@@ -32,12 +36,142 @@
          align-items: center;
          font-size: 1.6vmax;
          font-family: "montserrat m";}
-#navIn3 {color:white;
-            grid-column:4;
-            height:60%;
-            border-radius: 1vmax;
+#navIn3 {grid-column:5;
+            grid-row:1;
+            height:45%;
+            border-radius: 100vmax;
             width:100%;
-            border-color:linear-gradient();
-            align-self: center;
-            font-size: 1.3vmax;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(61,235,204,1) 100%);
+            align-self: center;}
+#navIn31 { grid-column:5;
+          grid-row:1;
+        height:42.5%;
+        width:98.8%;
+        align-self: center;
+        border-radius: 100vmax;
+        background-color: #0E1514;
+        display:grid;
+        grid-template-columns: 58% 1fr;
+        grid-template-rows: 100%;}
+#navIn311 {background-color: #369685;
+            border-radius: 100vmax;
+           border: 0.15vmax solid #01CCAC;}
+#navIn311Figure {background: url("../images/figure.png");
+                border-radius: 100vmax;
+                 width:100%;
+                 background-repeat: no-repeat;
+                 background-size: 120%;
+                 height:100%;
+                 color:white;
+                 text-align: center;
+                 line-height: 250%;
+                 font-size: 1vmax;
             font-family: "montserrat b";}
+#navIn312Svg {width:30%;
+              justify-self: center;
+              align-self: center;}
+#mainContentGradient1 {background: rgb(50,103,96); 
+                    grid-row:2/4;
+                     grid-column:1;
+                     height:100%;
+                     align-self: end;
+                     background: radial-gradient(circle, rgba(50,103,96,1) 9%, rgba(50,103,96,1) 16%, rgba(50,103,96,1) 24%, rgba(14,21,20,1) 76%, rgba(14,21,20,1) 100%);}
+#mainContentGradient2 {background: linear-gradient(180deg, rgba(14,21,20,1) 0%, rgba(50,103,96,0) 100%);
+                        grid-row:2/4;
+                         grid-column:1;
+                         height:40%;}
+#mainContentGrid {display:grid;
+                  grid-row:3;
+                  grid-column:1;
+                grid-template-columns: 4.5% 44% 43% 1fr;
+                grid-template-rows: 100%;}
+#mainImg {grid-column:3;
+          width:104%;
+          justify-self: center;}
+#fizzDeco {grid-column:4;
+           transform: translateY(18%);}
+#headerDescrGrid {display:grid;
+                    grid-row:1;
+                    grid-column:2;
+                grid-template-columns: 100%;
+                grid-template-rows: 11.5% 14% 3% 12.5% 20% 11% 2.5% 1fr;}
+#headerDescr1 {color:white;
+               grid-row:2;
+                font-size: 6.4vmax;
+                font-family: "montserrat black";}
+#headerDescr2 {color:#0DB295;
+                    grid-row:3;
+                     font-size: 6.4vmax;
+                     font-family: "montserrat black";}
+#headerDescr3 {color:white;
+                        grid-row:5;
+                         font-size: 1.6vmax;
+                         font-family: "montserrat m";}
+#headerDescr4 {display:grid;
+                grid-row:6;
+            grid-template-columns: 33% 1fr;
+            grid-template-rows: 100%;
+             align-items: center;
+             color:white;
+             font-size: 1.6vmax;
+            font-family: "montserrat m";}
+#headerDescr4 svg {width:7%;}
+#headerDescr5 {grid-row:8;
+                display:grid;
+            grid-template-columns: 18% 17% 17% 1fr;
+            grid-template-rows: 100%;}
+#headerDescr5img1 {width:90%;} 
+#headerDescr5img2 {width:100%;}
+#headerDescr5img3 {width:93%;}
+
+/*каталог*/
+#navCat {display:grid;
+        grid-template-columns: 4.5% 15% 5% 22.5% 23% 5% 10% 2% 6.5% 1fr;
+        grid-template-rows: 100%;
+        height:6.8vmax;
+        width:100%;
+        background-color: white;
+        box-shadow:0 0.5vmax 3vmax rgba(14,21,20,0.08);}
+#navCat1 {color:#0DB295;
+            align-self: center;
+            font-size: 1.8vmax;
+            grid-column:2;
+            font-family: "montserrat b";}
+#navCat2 {display:flex;
+                justify-content: space-between;
+                color:#0E1514;
+                grid-column:5;
+                align-items: center;
+                font-size: 1.4vmax;
+                font-family: "montserrat m";}
+#navCat3 {grid-column:7;
+          display:grid;
+          grid-template-rows:100%;
+          grid-template-columns:repeat(3,1fr);
+          column-gap:8%;
+          justify-items:center;
+          align-items:center;}
+#navCat3 svg {height:27%;}
+#navSearchIcon {grid-column:3;
+                align-self:center;
+                justify-self:center;
+                width:50%;}
+#navSearch {grid-column:4;
+            width:80%;
+            outline:none;
+            height:40%;
+            color:#0E1514;
+            font-family: "montserrat m";
+            border-radius:100vmax;
+            align-self:center;
+            padding-left:5%;
+            border: 0.12vmax solid #AAAAAA;}
+#exitButton {grid-column:9;
+            font-size: 1.5vmax;
+            font-family: "montserrat m";
+            color:#0E1514;
+            align-self:center;}
+#userPhoto {width:3vmax;
+            height:3vmax;
+            border-radius: 100vmax;
+            align-self:center;}
