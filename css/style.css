@@ -13,6 +13,8 @@
             src: url("../fonts/Montserrat-Bold.woff");}
 @font-face {font-family: "montserrat black";
                 src: url("../fonts/Montserrat-Black.woff");}
+@font-face {font-family: "montserrat sb";
+                    src: url("../fonts/Montserrat-SemiBold.woff");}
 
 /*главная*/
 #headerIndex {width:100%;
@@ -131,7 +133,7 @@
         height:6.8vmax;
         width:100%;
         background-color: white;
-        box-shadow:0 0.5vmax 3vmax rgba(14,21,20,0.08);}
+        box-shadow:0 0.5vmax 3vmax rgba(14,21,20,0.1);}
 #navCat1 {color:#0DB295;
             align-self: center;
             font-size: 1.8vmax;
@@ -175,3 +177,45 @@
             height:3vmax;
             border-radius: 100vmax;
             align-self:center;}
+#mainCat {background-color: #F8F8F8;}
+.rowCat {display:grid;
+         width:100%;
+         height:25vmax;
+         grid-template-columns: 1.5% repeat(4,1fr) 0.5%;
+         column-gap:3%;
+         grid-template-rows: 100%;}
+.cardCat {display:grid;
+          background-color: white;
+          border-radius: 1vmax;
+          border: 0.15vmax solid #F5F5F5;
+          grid-template-columns: 5% 1fr 22%;
+          grid-template-rows: 6% 48% 6.5% 5.5% 16% 1fr;}
+.cardCat > img {grid-row:2;
+                grid-column:1/span all;
+                justify-self: center;
+                height:100%;}
+.cardCatR1 {grid-row:4;
+            grid-column:2;
+            color: #0DB295;
+            font-size: 1.1vmax;
+            font-family: "montserrat m";}
+.cardCatR2 {grid-row:5;
+            grid-column:2/span all;
+            color: #0E1514;
+            font-size: 1.9vmax;
+            font-family: "montserrat sb";}
+.cardCatR3C1 {grid-row:6;
+            grid-column:2;
+            color: #0E1514;
+            font-size: 1.6vmax;
+            align-self:center;
+            font-family: "montserrat m";}
+.cardCatR3C2 {grid-row:6;
+            grid-column:3;
+            background-color: #0E1514;
+            border-radius: 1vmax 0 1vmax 0;
+            align-items:center;
+            justify-items: center;
+            display:grid;}
+.cardCatR3C2 svg {width:55%;}
+.voidCat {height:5vmax;}
