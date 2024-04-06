@@ -74,6 +74,32 @@
                 </div>
             </div>
         </div>
+        <div class="voidCat"></div>
     </main>
+    <div class='modalShadow'></div>
+    <div class='modal'>
+        <div class='modalBody'></div>
+        <img src='images/formodal.png' class='modalImg'> 
+        <div class='modalContent'>
+            <div class='modalR1'>Крутая ягода</div>
+            <div class='modalR2'>
+                <svg class='modalR2C1' viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.60393 1.36214C6.89095 0.478784 8.14067 0.478783 8.42769 1.36214L9.4532 4.51834C9.58156 4.91339 9.9497 5.18086 10.3651 5.18086H13.6837C14.6125 5.18086 14.9987 6.36941 14.2473 6.91536L11.5625 8.866C11.2264 9.11015 11.0858 9.54293 11.2141 9.93798L12.2397 13.0942C12.5267 13.9775 11.5156 14.7121 10.7642 14.1662L8.07938 12.2155C7.74333 11.9714 7.28829 11.9714 6.95224 12.2155L4.26741 14.1662C3.51598 14.7121 2.50494 13.9775 2.79196 13.0942L3.81747 9.93798C3.94583 9.54293 3.80521 9.11015 3.46916 8.866L0.784342 6.91536C0.0329115 6.36941 0.419095 5.18086 1.34791 5.18086H4.66654C5.08192 5.18086 5.45006 4.91339 5.57842 4.51834L6.60393 1.36214Z" fill="#FFB447"/>
+                </svg>
+                <div class='modalR2C2'>5.0</div>
+                <div class='modalR2C3'>(2343 Просмотров)</div>
+            </div>
+            <div class='modalR3'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam itaque aperiam, non officiis, tempore sunt, rerum velit obcaecati ut unde culpa earum recusandae tempora pariatur nulla autem. Quasi, numquam fugiat?</div>
+            <div class='modalR4OUT'></div>
+            <div class='modalR4'>
+                <div class='modalR4C1'>Offers</div>
+                <svg viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.56543 8.77499L6.54558 10.89L12.156 4.89746" stroke="#0DB295" stroke-width="0.958807" stroke-linecap="round"/>
+                    <circle cx="8.16078" cy="7.69399" r="6.71165" stroke="#0DB295" stroke-width="0.958807"/>
+                </svg>
+                <div class='modalR4C2'>Code TRYNEW ... </div>
+            </div>
+        </div>   
+    </div>
 </body>
 </html>
