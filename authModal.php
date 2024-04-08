@@ -5,9 +5,9 @@
         <path d="M13.8789 1.57422L1.89381 13.5593" stroke="black" stroke-width="1.91761" stroke-linecap="round"/>
     </svg>
     <div class='authHeadline'>Вход</div>
-    <form class='authForm' action='' method='post'>
-        <input type="text" name='email'>
-        <input type="text" name='password'>
+    <form class='authForm' action='db/auth-db.php' method='post'>
+        <input type="email" name='email' required placeholder='Электронная почта'>
+        <input type="text" name='password' required placeholder='Пароль'>
         <input type='submit' value='Войти' class='authButton'>
     </form>
     <div class='authSwitch'>Еще нет аккаунта? <span id='authA'> Создать аккаунт</span></div>
@@ -18,10 +18,10 @@
         <path d="M13.8789 1.57422L1.89381 13.5593" stroke="black" stroke-width="1.91761" stroke-linecap="round"/>
     </svg>
     <div class='authHeadline'>Регистрация</div>
-    <form class='authForm' action='' method='post'>
-        <input type="text" name='email'>
-        <input type="text" name='password'>
-        <input type='submit' value='Войти' class='authButton'>
+    <form class='authForm' action='db/reg-db.php' method='post'>
+        <input type="email" name='email' required placeholder='Электронная почта'>
+        <input type="text" name='password' required placeholder='Пароль'>
+        <input type='submit' value='Зарегистрироваться' class='authButton'>
     </form>
     <div class='authSwitch'>Есть аккаунт? <span id='regA'> Войти в аккаунт</span></div>
 </div>

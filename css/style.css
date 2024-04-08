@@ -406,7 +406,7 @@
           row-gap:10%;
           height:75%;
           grid-template-columns: 100%;}
-.authForm input[type=text] {border-radius: 100vmax;
+.authForm input[type=text], .authForm input[type=email]  {border-radius: 100vmax;
                             border: 0.11vmax solid #AAAAAA;
                             padding-left: 5%;
                             width:70%;
@@ -421,7 +421,7 @@
             font-size: 1.15vmax;
             color:#0E1514;
             font-family: "montserrat m";}
-.authButton {width:40%;
+.authButton {width:45%;
             background-color: #0DB295;
             color:white;
             border:none;
