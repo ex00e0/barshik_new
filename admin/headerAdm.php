@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог</title>
 </head>
 <body>
-    <?php require ("authModal.php");?>
+    <?php require ("../authModal.php"); ?>
     <nav id="navCat">
         <div id="navCat1">FIZZ BOOOM</div> 
         <svg id='navSearchIcon' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,12 +16,12 @@
         </svg>   
         <input id="navSearch">      
         <div id="navCat2">
-            <div>О нас</div>
-            <div>Контакты</div>
-            <div>Продукты</div>
+            <div><a href='index.php'>Товары</a></div>
+            <div><a href='categories.php'>Категории</a></div>
+            <div><a href='orders.php'>Заказы</a></div>
         </div>
         <div id="navCat3">
-            <svg viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- <svg viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.73877 1.61213C0.73877 1.41378 0.820846 1.22356 0.966942 1.0833C1.11304 0.943051 1.31119 0.864258 1.5178 0.864258H3.85489C4.02867 0.864304 4.19743 0.920125 4.33436 1.02284C4.47128 1.12556 4.5685 1.26928 4.61055 1.43114L5.24157 3.85574H23.3307C23.4451 3.85584 23.558 3.88012 23.6615 3.92686C23.765 3.9736 23.8566 4.04165 23.9296 4.12617C24.0026 4.2107 24.0553 4.30962 24.0841 4.41592C24.1128 4.52222 24.1167 4.63328 24.0957 4.74121L21.7586 16.7071C21.7252 16.8785 21.6304 17.0333 21.4907 17.1447C21.3511 17.2562 21.1752 17.3172 20.9936 17.3174H6.97102C6.7894 17.3172 6.61354 17.2562 6.47386 17.1447C6.33417 17.0333 6.23943 16.8785 6.20601 16.7071L3.87047 4.76365L3.24725 2.36H1.5178C1.31119 2.36 1.11304 2.2812 0.966942 2.14095C0.820846 2.0007 0.73877 1.81047 0.73877 1.61213ZM5.57188 5.35148L7.61761 15.8217H20.347L22.3927 5.35148H5.57188ZM8.52908 17.3174C7.70263 17.3174 6.91003 17.6326 6.32565 18.1936C5.74126 18.7546 5.41296 19.5155 5.41296 20.3089C5.41296 21.1023 5.74126 21.8632 6.32565 22.4242C6.91003 22.9852 7.70263 23.3004 8.52908 23.3004C9.35553 23.3004 10.1481 22.9852 10.7325 22.4242C11.3169 21.8632 11.6452 21.1023 11.6452 20.3089C11.6452 19.5155 11.3169 18.7546 10.7325 18.1936C10.1481 17.6326 9.35553 17.3174 8.52908 17.3174ZM19.4355 17.3174C18.6091 17.3174 17.8165 17.6326 17.2321 18.1936C16.6477 18.7546 16.3194 19.5155 16.3194 20.3089C16.3194 21.1023 16.6477 21.8632 17.2321 22.4242C17.8165 22.9852 18.6091 23.3004 19.4355 23.3004C20.262 23.3004 21.0546 22.9852 21.639 22.4242C22.2233 21.8632 22.5516 21.1023 22.5516 20.3089C22.5516 19.5155 22.2233 18.7546 21.639 18.1936C21.0546 17.6326 20.262 17.3174 19.4355 17.3174ZM8.52908 18.8131C8.9423 18.8131 9.3386 18.9707 9.6308 19.2512C9.92299 19.5317 10.0871 19.9122 10.0871 20.3089C10.0871 20.7056 9.92299 21.086 9.6308 21.3665C9.3386 21.647 8.9423 21.8046 8.52908 21.8046C8.11586 21.8046 7.71956 21.647 7.42736 21.3665C7.13517 21.086 6.97102 20.7056 6.97102 20.3089C6.97102 19.9122 7.13517 19.5317 7.42736 19.2512C7.71956 18.9707 8.11586 18.8131 8.52908 18.8131ZM19.4355 18.8131C19.8487 18.8131 20.245 18.9707 20.5372 19.2512C20.8294 19.5317 20.9936 19.9122 20.9936 20.3089C20.9936 20.7056 20.8294 21.086 20.5372 21.3665C20.245 21.647 19.8487 21.8046 19.4355 21.8046C19.0223 21.8046 18.626 21.647 18.3338 21.3665C18.0416 21.086 17.8775 20.7056 17.8775 20.3089C17.8775 19.9122 18.0416 19.5317 18.3338 19.2512C18.626 18.9707 19.0223 18.8131 19.4355 18.8131Z" fill="#AAAAAA"/>
             </svg>
             <svg viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,105 +30,9 @@
             </svg>
             <svg viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.73 15.8418C17.3358 14.6452 17.1344 13.3935 17.1332 12.1336V9.02063C17.1619 7.0481 16.458 5.13504 15.1576 3.65155C13.8617 2.16572 12.0631 1.21036 10.1064 0.968561C9.02509 0.856381 7.92509 0.968561 6.88119 1.32224C5.83729 1.65723 4.88687 2.21657 4.08603 2.96288C3.28119 3.68994 2.6397 4.57943 2.20389 5.57264C1.76591 6.56546 1.53731 7.63791 1.53237 8.72304V12.1508C1.53008 13.4055 1.32866 14.6518 0.935628 15.8434L0.00390625 18.5996L0.750218 19.6248H6.21123C6.21123 20.4443 6.54621 21.2452 7.12425 21.8248C7.70073 22.4013 8.50314 22.7378 9.32423 22.7378C10.1438 22.7378 10.9446 22.4028 11.5227 21.8248C12.1007 21.2467 12.4372 20.4443 12.4372 19.6248H17.8983L18.643 18.5996L17.73 15.8418ZM10.4227 20.745C10.2793 20.8913 10.1085 21.0077 9.91996 21.0876C9.73145 21.1676 9.52899 21.2095 9.32423 21.2109C9.1191 21.2095 8.91628 21.1674 8.72749 21.0872C8.53869 21.007 8.36765 20.8902 8.22424 20.7435C8.07774 20.6003 7.96103 20.4295 7.88081 20.241C7.80059 20.0524 7.75845 19.8499 7.75682 19.6451H10.8714C10.8779 19.8495 10.8414 20.053 10.7644 20.2425C10.6874 20.4319 10.5715 20.6031 10.4242 20.745H10.4227ZM1.82995 18.0808L2.408 16.3451C2.85876 14.9929 3.09174 13.5777 3.09822 12.1523V8.72304C3.09822 7.84585 3.28519 6.98891 3.63887 6.20521C3.99255 5.40436 4.4958 4.69545 5.14863 4.11741C5.80146 3.52223 6.56646 3.0735 7.386 2.81331C8.22424 2.53286 9.09987 2.43937 9.95681 2.53286C11.5274 2.73937 12.9673 3.51563 14.0031 4.71414C15.0392 5.91415 15.5962 7.45419 15.5674 9.03932V12.171C15.5674 13.5873 15.7918 15.0036 16.2576 16.3638L16.8357 18.0979H1.83151V18.0792L1.82995 18.0808Z" fill="#AAAAAA"/>
-            </svg>
+            </svg> -->
         </div>
-        <?=isset($_SESSION['user'])?"<a href='db/exit-db.php' id='exitA'>Выйти</a>":"<div id='exitEnterButton'>Войти</div>";?>
-        <img src="images/userPhotos/user0.png" id="userPhoto">
+        <?=isset($_SESSION['user'])?"<a href='../db/exit-db.php' id='exitA'>Выйти</a>":"<div id='exitEnterButton'>Войти</div>";?>
+        <img src="../images/userPhotos/user0.png" id="userPhoto">
     </nav>
-    <main id="mainCat">
-        <div class="voidCat"></div>
-        <div class="rowCat">
-            <div></div>
-            <div class='cardCat'>
-                <img src='images/darkgreen.png'>
-                <div class='cardCatR1'>Новинка</div>
-                <div class='cardCatR2'>Крутая ягода</div>
-                <div class='cardCatR3C1'>₽ 200</div>
-                <div class='cardCatR3C2'>
-                    <svg viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.1826 1.1582V19.8549" stroke="white" stroke-width="1.91761" stroke-linecap="round"/>
-                        <path d="M20.5312 10.5068L1.83451 10.5068" stroke="white" stroke-width="1.91761" stroke-linecap="round"/>
-                    </svg>
-                </div>
-            </div>
-            <div class='cardCat'>
-                <img src='images/darkgreen.png'>
-                <div class='cardCatR1'>Новинка</div>
-                <div class='cardCatR2'>Крутая ягода</div>
-                <div class='cardCatR3C1'>₽ 200</div>
-                <div class='cardCatR3C2'>
-                    <svg viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.1826 1.1582V19.8549" stroke="white" stroke-width="1.91761" stroke-linecap="round"/>
-                        <path d="M20.5312 10.5068L1.83451 10.5068" stroke="white" stroke-width="1.91761" stroke-linecap="round"/>
-                    </svg>
-                </div>
-            </div>
-            <div class='cardCat'>
-                <img src='images/darkgreen.png'>
-                <div class='cardCatR1'>Новинка</div>
-                <div class='cardCatR2'>Крутая ягода</div>
-                <div class='cardCatR3C1'>₽ 200</div>
-                <div class='cardCatR3C2'>
-                    <svg viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.1826 1.1582V19.8549" stroke="white" stroke-width="1.91761" stroke-linecap="round"/>
-                        <path d="M20.5312 10.5068L1.83451 10.5068" stroke="white" stroke-width="1.91761" stroke-linecap="round"/>
-                    </svg>
-                </div>
-            </div>
-        </div>
-        <div class="voidCat"></div>
-    </main>
-    <div class='modalShadow'></div>
-    <div class='modal'>
-        <div class='modalBody'>
-            <svg class='modalClose' viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.89355 1.57422L13.8786 13.5593" stroke="black" stroke-width="1.91761" stroke-linecap="round"/>
-                <path d="M13.8789 1.57422L1.89381 13.5593" stroke="black" stroke-width="1.91761" stroke-linecap="round"/>
-            </svg>
-        </div>
-        <img src='images/formodal.png' class='modalImg'> 
-        <div class='modalContent'>
-            <div class='modalR1'>Крутая ягода</div>
-            <div class='modalR2'>
-                <svg class='modalR2C1' viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.60393 1.36214C6.89095 0.478784 8.14067 0.478783 8.42769 1.36214L9.4532 4.51834C9.58156 4.91339 9.9497 5.18086 10.3651 5.18086H13.6837C14.6125 5.18086 14.9987 6.36941 14.2473 6.91536L11.5625 8.866C11.2264 9.11015 11.0858 9.54293 11.2141 9.93798L12.2397 13.0942C12.5267 13.9775 11.5156 14.7121 10.7642 14.1662L8.07938 12.2155C7.74333 11.9714 7.28829 11.9714 6.95224 12.2155L4.26741 14.1662C3.51598 14.7121 2.50494 13.9775 2.79196 13.0942L3.81747 9.93798C3.94583 9.54293 3.80521 9.11015 3.46916 8.866L0.784342 6.91536C0.0329115 6.36941 0.419095 5.18086 1.34791 5.18086H4.66654C5.08192 5.18086 5.45006 4.91339 5.57842 4.51834L6.60393 1.36214Z" fill="#FFB447"/>
-                </svg>
-                <div class='modalR2C2'>5.0</div>
-                <div class='modalR2C3'>(2343 Заказов)</div>
-            </div>
-            <div class='modalR3'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam itaque aperiam, non officiis, tempore sunt, rerum velit obcaecati ut unde culpa earum recusandae tempora pariatur nulla autem. Quasi, numquam fugiat?</div>
-            <div class='modalR4OUT'></div>
-            <div class='modalR4'>
-                <div class='modalR4C1'>Акции</div>
-                <svg viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4.56543 8.77499L6.54558 10.89L12.156 4.89746" stroke="#0DB295" stroke-width="0.958807" stroke-linecap="round"/>
-                    <circle cx="8.16078" cy="7.69399" r="6.71165" stroke="#0DB295" stroke-width="0.958807"/>
-                </svg>
-                <div class='modalR4C2-1'>Промокод TRYNEW применен! </div>
-                <div class='modalR4C2-2'>Скидка 20% на заказ от 500 ₽</div>
-                <div class='modalR4C3-1'>- 100 ₽</div>
-                <div class='modalR4C3-2'>Убрать</div>
-            </div>
-            <div class='modalR5'>Размер</div>
-            <div class='modalR6'>
-                <div>0.33 л</div>
-                <div>0.45 л</div>
-                <div>0.8 л</div>
-            </div>
-            <div class='modalR7OUT'>
-                <div class='modalR7C1-1'>Итого</div>
-                <div class='modalR7C1-2'>500 ₽</div>
-                <button class='modalR7C2'>В корзину</button>
-            </div>
-        </div>   
-    </div>
-<script src='js/scriptCat.js'></script>
-<?php
-        $reg = isset($_GET['reg'])?$_GET['reg']:false;
-        if ($reg) {echo "<script>exitEnterButton.click();
-                                fromAuthToReg.click(); </script>";}
-        $auth = isset($_GET['auth'])?$_GET['auth']:false;
-        if ($auth) {echo "<script>exitEnterButton.click();</script>";}
-?>
-</body>
-</html>
+<script src='../js/scriptAdm.js'></script>

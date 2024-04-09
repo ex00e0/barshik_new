@@ -5,7 +5,7 @@
         <path d="M13.8789 1.57422L1.89381 13.5593" stroke="black" stroke-width="1.91761" stroke-linecap="round"/>
     </svg>
     <div class='authHeadline'>Вход</div>
-    <form class='authForm' action='db/auth-db.php' method='post'>
+    <form class='authForm' action='<?php if ($_SERVER['PHP_SELF']=='/admin/index.php' || $_SERVER['PHP_SELF']=='/admin/categories.php' || $_SERVER['PHP_SELF']=='/admin/orders.php') echo '../db/auth-db.php'; else echo 'db/auth-db.php';?>' method='post'>
         <input type="email" name='email' required placeholder='Электронная почта'>
         <input type="text" name='password' required placeholder='Пароль'>
         <input type='submit' value='Войти' class='authButton'>
@@ -18,7 +18,7 @@
         <path d="M13.8789 1.57422L1.89381 13.5593" stroke="black" stroke-width="1.91761" stroke-linecap="round"/>
     </svg>
     <div class='authHeadline'>Регистрация</div>
-    <form class='authForm' action='db/reg-db.php' method='post'>
+    <form class='authForm' action='<?php if ($_SERVER['PHP_SELF']=='/admin/index.php' || $_SERVER['PHP_SELF']=='/admin/categories.php' || $_SERVER['PHP_SELF']=='/admin/orders.php') echo '../db/reg-db.php'; else echo 'db/reg-db.php';?>' method='post'>
         <input type="email" name='email' required placeholder='Электронная почта'>
         <input type="text" name='password' required placeholder='Пароль'>
         <input type='submit' value='Зарегистрироваться' class='authButton'>

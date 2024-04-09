@@ -115,6 +115,7 @@
             grid-template-rows: 100%;
              align-items: center;
              color:white;
+             text-decoration: none;
              font-size: 1.6vmax;
             font-family: "montserrat m";}
 #headerDescr4 svg {width:7%;}
@@ -146,6 +147,8 @@
                 align-items: center;
                 font-size: 1.4vmax;
                 font-family: "montserrat m";}
+#navCat2 a {color:#0E1514;
+              text-decoration: none;}
 #navCat3 {grid-column:7;
           display:grid;
           grid-template-rows:100%;
@@ -168,7 +171,7 @@
             align-self:center;
             padding-left:5%;
             border: 0.12vmax solid #AAAAAA;}
-#exitEnterButton {grid-column:9;
+#exitEnterButton, #exitA {grid-column:9;
             font-size: 1.5vmax;
             font-family: "montserrat m";
             color:#0E1514;
@@ -430,3 +433,4 @@
             border-radius: 100vmax;
             font-family: "montserrat sb";
             justify-self:center;}
+#exitA {text-decoration: none;}

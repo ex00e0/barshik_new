@@ -19,5 +19,5 @@ else if(!isset($userEmail) || !isset($userPass)){    //если только о�
 
 session_start();
 $_SESSION['user']=$userEmail['id_user'];
-// header('Location: account.php');
+header('Location: ../catalogue.php');
 ?>

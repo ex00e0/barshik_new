@@ -16,7 +16,7 @@
                 <div>Products</div>
             </div>
             <div id="navIn3"></div>
-            <div id="navIn31">
+            <a id="navIn31" href='catalogue.php'>
                 <div id="navIn311">
                     <div id="navIn311Figure">Buy</div>
                 </div>
@@ -24,7 +24,7 @@
                     <path d="M1.72705 1.6582L7.30906 7.24022L1.72705 12.8222" stroke="white" stroke-width="1.79123" stroke-linecap="round"/>
                     <path d="M7.30957 1.6582L12.8916 7.24022L7.30957 12.8222" stroke="white" stroke-opacity="0.5" stroke-width="1.79123" stroke-linecap="round"/>
                 </svg>
-            </div>
+            </a>
         </nav>
         <div id="mainContentGradient1"></div>
         <div id="mainContentGradient2"></div>
@@ -34,12 +34,12 @@
                 <div id="headerDescr2">EVERY SIP</div>
                 <div id="headerDescr3">The ultimate refreshing drink<br>
                     to enjoy in every festival</div>
-                <div id="headerDescr4">
+                <a id="headerDescr4" href='catalogue.php'>
                     <div>View Products</div>
                     <svg viewBox="0 0 53 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 20H48M48 20L31.5 3.5M48 20L31.5 36.5" stroke="white" stroke-width="6" stroke-linecap="round"/>
                     </svg>
-                </div>
+                </a>
                 <div id="headerDescr5">
                     <img src="images/red.png" id="headerDescr5img1">
                     <img src="images/yellow.png" id="headerDescr5img2">
