@@ -222,6 +222,7 @@ main {background-color: #F8F8F8;}
             display:grid;}
 .cardCatR3C2 svg {width:55%;}
 .voidCat {height:5vmax;}
+.voidAdm {height:3vmax;}
 
 /*модальное окно*/
 .modal {position:fixed;
@@ -434,3 +435,87 @@ main {background-color: #F8F8F8;}
             font-family: "montserrat sb";
             justify-self:center;}
 #exitA {text-decoration: none;}
+
+/*админ-панель: товары*/
+.rowAdmTovar {display:grid;
+              width:100%;
+              height:5vmax;
+              grid-template-columns: 4.5% 6% 19% 29% 14% 11% 1fr 1fr 3.5%;
+              grid-template-rows: 100%;
+              align-items: center;
+              font-size:1.2vmax;
+              color:#0E1514;}
+.rowTH {font-family: 'montserrat b';}
+.rowTD {font-family: 'montserrat m';}
+.addButton {display:grid;
+            align-items:center;
+            justify-items:center;
+            grid-column:6/9;
+            justify-self:end;
+            width:70%;
+            background-color: #0DB295;
+            color:white;
+            height:80%;
+            text-decoration: none;
+            font-size: 1.3vmax;
+            border-radius: 100vmax;
+            font-family: "montserrat sb";}
+.editButton, .deleteButton {width:100%;
+                          justify-self: center;}
+.editA, .deleteA {justify-self: center;
+        width:45%;}
+.actionAdm {grid-column:7/9;
+            justify-self:center;}
+.addGrid {display:grid;
+          width:100%;
+          height:35vmax;
+          grid-template-columns: 4.5% 1fr 3.5%;
+          grid-template-rows: 7% 1fr;}
+.addHeadline {grid-column:2;
+              grid-row:1;
+              font-family: 'montserrat sb';
+              font-size:1.5vmax;
+              color:#0E1514;}
+#formAdd {grid-column:2;
+          display:grid;
+          grid-template-columns: 13% 35% 1fr;
+          align-items:center;
+          grid-template-rows: repeat(6,1fr);}
+#formAdd label {grid-column:1;
+              font-size:1.2vmax;
+              font-family: 'montserrat m';
+              color:#0E1514;}
+#formAdd input[type=text], #formAdd select, #formAdd input[type=number] {grid-column:2;
+                                 height:50%;
+                                 border-radius:100vmax;
+                                 color:#0E1514;
+                                 font-family: 'montserrat m';
+                                 border: 0.11vmax solid #AAAAAA;
+                                 padding-left: 5%;}
+#formAdd div {font-size:1.2vmax;
+                font-family: 'montserrat m';
+                color:#0E1514;
+                border-radius:100vmax;
+                height:50%;
+                text-align:center;
+                background-color: rgba(139, 139, 139, 0.1);
+                line-height:200%;
+                grid-column:2;
+                border: 0.11vmax solid #AAAAAA;}
+#formAdd input[type=submit] {grid-column:2;
+                            width:55%;
+                            background-color: #0DB295;
+                            color:white;
+                            height:65%;
+                            font-size: 1.3vmax;
+                            border-radius: 100vmax;
+                            font-family: "montserrat sb";
+                            border-radius:100vmax;
+                            border:none;
+                            justify-self:end;}
+.imgProduct {height:90%;}
+#imgOld {grid-column:3;
+         height:70%;
+         justify-self:center;
+         align-self:center;
+         grid-row:1/5;}
