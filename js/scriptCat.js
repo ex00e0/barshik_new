@@ -3,7 +3,8 @@ let modalClose = document.getElementsByClassName("modalClose")[0];
 let cardCatR3C2 = document.getElementsByClassName("cardCatR3C2");
 let modalShadow = document.getElementsByClassName("modalShadow")[1];
 let modal = document.getElementsByClassName("modal")[0];
-
+let scrollHeight = document.body.scrollHeight;
+modalShadow.style.height=`${scrollHeight}px`; 
 modalClose.addEventListener("click", function () {modalShadow.style.display='none';
                                                 modal.style.display='none';} );
 for (let i=0;i<cardCatR3C2.length;i++) {cardCatR3C2[i].addEventListener("click", function () {modalShadow.style.display='block';
@@ -18,7 +19,6 @@ let modalReg = document.getElementById("modalReg");
 let regClose = document.getElementById("regClose");
 let authClose = document.getElementById("authClose");
 let exitEnterButton = document.getElementById('exitEnterButton');
-
 exitEnterButton.addEventListener('click', function () {modalAuth.style.display='grid';
                                                         modalShadowAuth.style.display='block';} );
 fromAuthToReg.addEventListener('click', function () {modalAuth.style.display='none';

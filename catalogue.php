@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php require ("db/connect-db.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +38,45 @@
     </nav>
     <main id="mainCat">
         <div class="voidCat"></div>
-        <div class="rowCat">
+        <?php
+        $productsAll = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM products"));
+        $b = 1;
+        $forNew = 0;
+        $indexArr = ceil(count($productsAll)/3);  
+        $keyProduct = count($productsAll);
+    function type3 ($b,$productsAll, $keyProduct, $forNew) {if ($b%5==0 || $b==1) {echo "<div class='rowCat'>
+                                                                                         <div></div>";
+        $s = 1;
+        for ($new=$forNew;;$new++) { if($keyProduct==0) {break;} $item = $productsAll[$new];
+                    echo "<div class='cardCat'>
+                            <img src='images/$item[5]'>
+                            <div class='cardCatR1'>Новинка</div>
+                            <div class='cardCatR2'>$item[1]</div>
+                            <div class='cardCatR3C1'>₽ $item[4]</div>
+                            <div class='cardCatR3C2'>
+                                <svg viewBox='0 0 22 21' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                    <path d='M11.1826 1.1582V19.8549' stroke='white' stroke-width='1.91761' stroke-linecap='round'/>
+                                    <path d='M20.5312 10.5068L1.83451 10.5068' stroke='white' stroke-width='1.91761' stroke-linecap='round'/>
+                                </svg>
+                            </div>
+                        </div>";
+           $s++;
+           $b++;
+           $keyProduct--;
+           $forNew++;
+            if ($b%5==0) {$s = 0;
+            break;    }  }
+        echo "</div>";
+        echo "<div class='voidCat'></div>";
+        // if ($keyProduct!=0) {}      
+          }
+        return [$b, $keyProduct, $forNew];   }
+        for ($er=0;$er<$indexArr;$er++) {$arrBKey = type3($b, $productsAll, $keyProduct, $forNew);
+            $b = $arrBKey[0];
+               $keyProduct = $arrBKey[1];
+               $forNew = $arrBKey[2];}    
+     ?>
+        <!-- <div class="rowCat">
             <div></div>
             <div class='cardCat'>
                 <img src='images/darkgreen.png'>
@@ -76,7 +115,7 @@
                 </div>
             </div>
         </div>
-        <div class="voidCat"></div>
+        <div class="voidCat"></div> -->
     </main>
     <div class='modalShadow'></div>
     <div class='modal'>
