@@ -109,10 +109,10 @@
                 <div class='modalR4C3-1'>- 100 ₽</div>
                 <div class='modalR4C3-2'>Убрать</div>
             </div>
-            <div class='modalR5'>Размер</div>
+            <div class='modalR5'>Объем</div>
             <div class='modalR6'>
-                <div>0.33 л</div>
-                <div>0.45 л</div>
+                <div>0.3 л</div>
+                <div>0.5 л</div>
                 <div>0.8 л</div>
             </div>
             <div class='modalR7OUT'>
