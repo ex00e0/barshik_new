@@ -5,7 +5,7 @@
         $productsAll = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM products"));
         $b = 1;
         $forNew = 0;
-        $indexArr = ceil(count($productsAll)/3);  
+        $indexArr = ceil(count($productsAll)/4);  
         $keyProduct = count($productsAll);
     function type3 ($b,$productsAll, $keyProduct, $forNew) {if ($b%5==0 || $b==1) {echo "<div class='rowCat'>
                                                                                          <div></div>";

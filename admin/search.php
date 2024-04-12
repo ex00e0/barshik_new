@@ -1,20 +1,7 @@
-<?php require ("headerAdm.php"); ?>
-<?php require ("../db/connect-db.php"); ?>
-<script>
-    let search = '';
-    $("#navSearch").on("keyup", function() {search = $("#navSearch").val(); 
-        $.ajax({
-        url: "search.php", 
-        type: "POST",
-        data: {
-            value:  $('#navSearch').val()
-         }, 
-        success: function(result){
-      $("main").html(result);
-    }});
-                                        } );
-</script>
-<main>
+
+ <?php $post = isset($_POST['value'])?$_POST['value']:false;   ?>
+ <?php require ("../db/connect-db.php"); ?>
+ <main>
     <div class="voidAdm"></div>
     <div class='rowAdmTovar'>
         <a href='crud/addProduct.php' class='addButton'>
@@ -32,7 +19,9 @@
     </div>
     
     <?php
-    $products = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM products"));
+    $queProd = "SELECT * FROM products";
+    if ($post) {$queProd.=" WHERE name_product LIKE '%$post%'";}
+    $products = mysqli_fetch_all(mysqli_query($connect, $queProd));
      $cathegories = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM cathegories"));
     foreach ($products as $prod) {echo "<div class='rowAdmTovar rowTD'>
             <div></div>

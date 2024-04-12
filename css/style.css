@@ -164,13 +164,16 @@
 #navSearch {grid-column:4;
             width:80%;
             outline:none;
-            height:40%;
+            height:100%;
             color:#0E1514;
             font-family: "montserrat m";
             border-radius:100vmax;
             align-self:center;
             padding-left:5%;
             border: 0.12vmax solid #AAAAAA;}
+#formSearch {grid-column:4;
+             height:40%;
+             align-self:center;}
 #exitEnterButton, #exitA {grid-column:9;
             font-size: 1.5vmax;
             font-family: "montserrat m";
