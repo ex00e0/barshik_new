@@ -19,5 +19,6 @@ else if(!isset($userEmail) || !isset($userPass)){    //если только о�
 
 session_start();
 $_SESSION['user']=$userEmail['id_user'];
-header('Location: ../catalogue.php');
+if ($userEmail['status']=='admin') {header('Location: ../admin/index.php');} 
+else {header('Location: ../catalogue.php');}
 ?>

@@ -1,4 +1,10 @@
 <?php session_start(); ?>
+<?php 
+if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php') {require ("../../db/connect-db.php");}
+else {require ("../db/connect-db.php");}
+?>
+<?php if(isset($_SESSION['user'])) {$user_id = $_SESSION['user'];
+                                $user = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM users WHERE id_user=$user_id")); } ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,9 +25,12 @@
         </svg>   
         <input id="navSearch">      
         <div id="navCat2">
-            <div><a href='../index.php'>Товары</a></div>
-            <div><a href='../categories.php'>Категории</a></div>
-            <div><a href='../orders.php'>Заказы</a></div>
+            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php') {echo "../index.php";}
+                                else {echo "index.php";} ?>'>Товары</a></div>
+            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php') {echo "../categories.php";}
+                                else {echo "categories.php";} ?>'>Категории</a></div>
+            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php') {echo "../orders.php";}
+                                else {echo "orders.php";} ?>'>Заказы</a></div>
         </div>
         <div id="navCat3">
             <!-- <svg viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,6 +45,6 @@
             </svg> -->
         </div>
         <?=isset($_SESSION['user'])?"<a href='../../db/exit-db.php' id='exitA'>Выйти</a>":"<div id='exitEnterButton'>Войти</div>";?>
-        <img src="../../images/userPhotos/user0.png" id="userPhoto">
+        <?=isset($_SESSION['user'])?"<a href='account.php' id='userPhotoA'><img src='../../images/userPhotos/".$user[0][4]."' id='userPhoto'></a>":"";?>
     </nav>
 <script src='../../js/scriptAdm.js'></script>
