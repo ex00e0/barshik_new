@@ -8,6 +8,5 @@ if ($id_prod) {$new_info = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * F
 if ($new_info) {$query_delete = mysqli_query($connect,"DELETE FROM products WHERE id_product=$id_prod");
                  if ($query_delete) {echo check_error("Товар удален!"); }
                     else {echo check_error("Ошибка удаления товара: ". mysqli_error($connect)); } }
-//удаление данных о новости в бд
 
 ?>

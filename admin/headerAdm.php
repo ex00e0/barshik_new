@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php 
-if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php') {require ("../../db/connect-db.php");}
+if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php') {require ("../../db/connect-db.php");}
 else {require ("../db/connect-db.php");}
 ?>
 <?php if(isset($_SESSION['user'])) {$user_id = $_SESSION['user'];
@@ -9,14 +9,14 @@ else {require ("../db/connect-db.php");}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php') echo "../../css/style.css";
+    <link rel="stylesheet" href="<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php') echo "../../css/style.css";
                                         else echo "../css/style.css";?>"  >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Админ</title>
 </head>
 <body>
     <?php 
-    if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php') {require ("../../authModal.php");}
+    if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php') {require ("../../authModal.php");}
     else {require ("../authModal.php");} ?>
     <nav id="navCat">
         <div id="navCat1">FIZZ BOOOM</div> 
@@ -25,11 +25,11 @@ else {require ("../db/connect-db.php");}
         </svg>   
         <input id="navSearch">      
         <div id="navCat2">
-            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php') {echo "../index.php";}
+            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php') {echo "../index.php";}
                                 else {echo "index.php";} ?>'>Товары</a></div>
-            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php') {echo "../categories.php";}
+            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php') {echo "../categories.php";}
                                 else {echo "categories.php";} ?>'>Категории</a></div>
-            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php') {echo "../orders.php";}
+            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php') {echo "../orders.php";}
                                 else {echo "orders.php";} ?>'>Заказы</a></div>
         </div>
         <div id="navCat3">
