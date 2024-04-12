@@ -481,18 +481,19 @@ main {background-color: #F8F8F8;}
           grid-template-columns: 13% 35% 1fr;
           align-items:center;
           grid-template-rows: repeat(6,1fr);}
-#formAdd label {grid-column:1;
+#formAdd label, #formAccount label {grid-column:1;
               font-size:1.2vmax;
               font-family: 'montserrat m';
               color:#0E1514;}
-#formAdd input[type=text], #formAdd select, #formAdd input[type=number] {grid-column:2;
+#formAdd input[type=text], #formAdd select, #formAdd input[type=number], 
+#formAccount input[type=text] {grid-column:2;
                                  height:50%;
                                  border-radius:100vmax;
                                  color:#0E1514;
                                  font-family: 'montserrat m';
                                  border: 0.11vmax solid #AAAAAA;
                                  padding-left: 5%;}
-#formAdd div {font-size:1.2vmax;
+#formAdd div, #formAccount div:not(#photoHeadline) {font-size:1.2vmax;
                 font-family: 'montserrat m';
                 color:#0E1514;
                 border-radius:100vmax;
@@ -502,7 +503,7 @@ main {background-color: #F8F8F8;}
                 line-height:200%;
                 grid-column:2;
                 border: 0.11vmax solid #AAAAAA;}
-#formAdd input[type=submit] {grid-column:2;
+#formAdd input[type=submit], #formAccount input[type=submit] {grid-column:2;
                             width:55%;
                             background-color: #0DB295;
                             color:white;
@@ -519,3 +520,24 @@ main {background-color: #F8F8F8;}
          justify-self:center;
          align-self:center;
          grid-row:1/5;}
+
+/*фото пользователя, страница аккаунта*/
+#userPhotoA {align-self:center;}
+#imgOldUser {grid-column:3;
+         width:10vmax;
+        justify-self:center;
+        align-self:center;
+        grid-row:2/span all;}
+#formAccount {grid-column:2;
+        display:grid;
+        grid-template-columns: 13% 35% 1fr;
+        align-items:center;
+        grid-template-rows: repeat(4,1fr);
+        height:60%;}
+#photoHeadline {grid-column:3;
+               grid-row:1;
+               align-self: center;
+               text-align: center;
+               font-family: 'montserrat m';
+                color:#0E1514;
+                font-size:1.2vmax;}
