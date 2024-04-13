@@ -48,6 +48,8 @@ else {require ("../db/connect-db.php");}
             </svg> -->
         </div>
         <?=isset($_SESSION['user'])?"<a href='../../db/exit-db.php' id='exitA'>Выйти</a>":"<div id='exitEnterButton'>Войти</div>";?>
-        <?=isset($_SESSION['user'])?"<a href='account.php' id='userPhotoA'><img src='../../images/userPhotos/".$user[0][4]."' id='userPhoto'></a>":"";?>
+        <?php if (isset($_SESSION['user'])) {echo "<a href=";
+               if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php') {echo "../../account.php";}
+                                else {echo "../account.php";} echo " id='userPhotoA'><img src='../../images/userPhotos/".$user[0][4]."' id='userPhoto'></a>";}?>
     </nav>
 <script src='../../js/scriptAdm.js'></script>

@@ -43,10 +43,10 @@
             <div>$prod[3]</div> ";
             // foreach ($cathegories as $cat) {if ($prod[3]==$cat[0]) {echo $cat[1];}} 
             echo "<div>$prod[4] ₽</div>
-            <div><a href=''>Подробнее..</a></div>
-            <a href='crud/editProduct.php?product=$prod[0]' class='orderButton2'><img src='../images/clock-time.png' class='editButton'></a>
-            <a href='crud/editProduct.php?product=$prod[0]' class='orderButton'><img src='../images/pencil.png' class='editButton'></a>
-            <a href='crud/deleteProduct.php?product=$prod[0]' class='orderButton'><img src='../images/delete-button.png' class='deleteButton'></a>
+            <div><a href='ordersInfo.php?order=$prod[0]' class='orderInfoA'>Подробнее..</a></div>
+            <a href='crud/editProduct.php?order=$prod[0]' class='orderButton2'><img src='../images/clock-time.png' class='editButton'></a>
+            <a href='crud/editProduct.php?order=$prod[0]' class='orderButton'><img src='../images/pencil.png' class='editButton'></a>
+            <a href='crud/deleteProduct.php?order=$prod[0]' class='orderButton'><img src='../images/delete-button.png' class='deleteButton'></a>
         </div>";}
     ?>
 </main>
