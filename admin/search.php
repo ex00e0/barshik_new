@@ -1,9 +1,21 @@
 
- <?php $post = isset($_POST['value'])?$_POST['value']:false;   ?>
+ <?php $post = isset($_POST['value'])?$_POST['value']:false;   
+       echo $post;
+        $filter = isset($_POST['value2'])?$_POST['value2']:false; ?>
  <?php require ("../db/connect-db.php"); ?>
  <main>
     <div class="voidAdm"></div>
     <div class='rowAdmTovar'>
+        <div id='gridFilter'>
+            <div id='labelFilter'> Показывать: </div>
+            <select id='selectFilter'>
+                <option value="">все</option>
+                <?php
+                $categ = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM cathegories"));
+                foreach ($categ as $catcat) {echo "<option value='$catcat[0]'>$catcat[1]</option>";}
+                ?>
+            </select>
+         </div>  
         <a href='crud/addProduct.php' class='addButton'>
             <div>Добавить товар</div>
         </a>
@@ -20,7 +32,9 @@
     
     <?php
     $queProd = "SELECT * FROM products";
-    if ($post) {$queProd.=" WHERE name_product LIKE '%$post%'";}
+    if ($post && $filter) {$queProd.=" WHERE name_product LIKE '%$post%' AND id_cathegory_prod=$filter";}
+    else if ($post) {$queProd.=" WHERE name_product LIKE '%$post%'";}
+    else if ($filter) {$queProd.=" WHERE id_cathegory_prod=$filter";}
     $products = mysqli_fetch_all(mysqli_query($connect, $queProd));
      $cathegories = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM cathegories"));
     foreach ($products as $prod) {echo "<div class='rowAdmTovar rowTD'>
@@ -37,5 +51,6 @@
         </div>";}
     ?>
 </main>
+
 </body>
 </html>

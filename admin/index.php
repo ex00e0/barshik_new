@@ -1,22 +1,19 @@
 <?php require ("headerAdm.php"); ?>
 <?php require ("../db/connect-db.php"); ?>
-<script>
-    let search = '';
-    $("#navSearch").on("keyup", function() {search = $("#navSearch").val(); 
-        $.ajax({
-        url: "search.php", 
-        type: "POST",
-        data: {
-            value:  $('#navSearch').val()
-         }, 
-        success: function(result){
-      $("main").html(result);
-    }});
-                                        } );
-</script>
+
 <main>
     <div class="voidAdm"></div>
     <div class='rowAdmTovar'>
+        <div id='gridFilter'>
+            <div id='labelFilter'> Показывать: </div>
+            <select id='selectFilter'>
+                <option value="">все</option>
+                <?php
+                $categ = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM cathegories"));
+                foreach ($categ as $catcat) {echo "<option value='$catcat[0]'>$catcat[1]</option>";}
+                ?>
+            </select>
+         </div>    
         <a href='crud/addProduct.php' class='addButton'>
             <div>Добавить товар</div>
         </a>
@@ -48,5 +45,33 @@
         </div>";}
     ?>
 </main>
+<?php require ("search.php"); ?>
+<script>
+
+
+$(document).ready(function() {
+  $('#navSearch').on('keyup', getDishes);
+  $('#selectFilter').on('change', getDishes);
+});
+
+var getDishes = function(){
+  let request_data = {'filters': $("#selectFilter").val(), 'name': $('#navSearch').val() };  
+  console.log(request_data);
+  $.ajax({
+                                    url: "search.php", 
+                                    type: "POST",
+                                    data: { value: request_data
+                                    }, 
+                                    success: function(result){
+                                $("main").html(result);
+                                }}); }
+
+                                $formdata = filter_input_array(INPUT_POST);
+$filters = $formdata['filters'];
+    // let search = 0;
+    // let filter = 0;
+    // $("#selectFilter").change( function () {filter =  $("#selectFilter").val();} );
+    // $("#navSearch").on("keyup", function() {search =  $("#selectFilter").val();} );
+    </script>
 </body>
 </html>
