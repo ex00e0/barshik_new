@@ -1,6 +1,15 @@
+
 <?php require ("headerAdm.php"); ?>
 <?php require ("../db/connect-db.php"); ?>
+<?php  
+// $filter = $_SESSION['fise']['filters'];
+// $search = $_SESSION['fise']['name'];
+$post = ($_GET['post'] == "0")?false:$_GET['post'];
+$filter = ($_GET['filter'] == "0")?false:$_GET['filter'];
+// $formdata = filter_input_array(INPUT_POST);
+// var_dump($formdata);
 
+?>
 <main>
     <div class="voidAdm"></div>
     <div class='rowAdmTovar'>
@@ -10,7 +19,9 @@
                 <option value="">все</option>
                 <?php
                 $categ = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM cathegories"));
-                foreach ($categ as $catcat) {echo "<option value='$catcat[0]'>$catcat[1]</option>";}
+                foreach ($categ as $catcat) {echo "<option value='$catcat[0]' ";
+                    if ($catcat[0]==$filter) {echo 'selected';}
+                    echo ">$catcat[1]</option>";}
                 ?>
             </select>
          </div>    
@@ -29,7 +40,11 @@
     </div>
     
     <?php
-    $products = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM products"));
+    $queProd = "SELECT * FROM products";
+    if ($post && $filter) {$queProd.=" WHERE name_product LIKE '%$post%' AND id_cathegory_prod=$filter";}
+    else if ($post) {$queProd.=" WHERE name_product LIKE '%$post%'";}
+    else if ($filter) {$queProd.=" WHERE id_cathegory_prod=$filter";}
+    $products = mysqli_fetch_all(mysqli_query($connect, $queProd));
      $cathegories = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM cathegories"));
     foreach ($products as $prod) {echo "<div class='rowAdmTovar rowTD'>
             <div></div>
@@ -45,10 +60,10 @@
         </div>";}
     ?>
 </main>
-<?php require ("search.php"); ?>
 <script>
-
-
+let navS = document.getElementById("navSearch");
+let text = "<?php if($post) echo $post; else echo ""; ?>";
+navS.value = text;
 $(document).ready(function() {
   $('#navSearch').on('keyup', getDishes);
   $('#selectFilter').on('change', getDishes);
@@ -56,22 +71,51 @@ $(document).ready(function() {
 
 var getDishes = function(){
   let request_data = {'filters': $("#selectFilter").val(), 'name': $('#navSearch').val() };  
-  console.log(request_data);
-  $.ajax({
-                                    url: "search.php", 
-                                    type: "POST",
-                                    data: { value: request_data
-                                    }, 
-                                    success: function(result){
-                                $("main").html(result);
-                                }}); }
-
-                                $formdata = filter_input_array(INPUT_POST);
-$filters = $formdata['filters'];
+//   console.log(request_data);
+$.ajax({
+    url: 'search.php',         /* Куда отправить запрос */
+    method: 'post',             /* Метод запроса (post или get) */
+    dataType: 'html',          /* Тип данных в ответе (xml, json, script, html). */
+    data: {text: request_data},     /* Данные передаваемые в массиве */
+    success: function(data){
+        $("main").html(data);
+           /* функция которая будет выполнена после успешного запроса.  */
+	     /* В переменной data содержится ответ от index.php. */
+    }
+});
+// $.ajax({
+//         type: "POST",
+//         url: 'sp.php',
+//         contentType: false,
+//         processData: false,
+//         data: request_data,
+//         success: function(data){
+//         },
+//     });
+//   $.ajax({
+//                                     url: "", 
+//                                     type: 'text',
+//                                     method: "POST",
+//                                     data: { filters: request_data }, 
+//                                     success: (response)=>{
+//             console.log('Запрос успешно отправился, получаем ответ', response);
+           
+//         }  
+//     }); 
+}
+// $.ajax({
+//                     url: '',
+//                     method: 'POST',
+//                     data: {"num" : request_data}
+//                 }).done(function(data){
+//                     console.log(data); 
+//                 });
+//             }
+                               
     // let search = 0;
     // let filter = 0;
     // $("#selectFilter").change( function () {filter =  $("#selectFilter").val();} );
     // $("#navSearch").on("keyup", function() {search =  $("#selectFilter").val();} );
-    </script>
+</script>
 </body>
 </html>

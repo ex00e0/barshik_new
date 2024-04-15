@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php 
-if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php') {require ("../../db/connect-db.php");}
+if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editStatusOrder.php') {require ("../../db/connect-db.php");}
 else {require ("../db/connect-db.php");}
 ?>
 <?php if(isset($_SESSION['user'])) {$user_id = $_SESSION['user'];
@@ -9,7 +9,7 @@ else {require ("../db/connect-db.php");}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php') echo "../../css/style.css";
+    <link rel="stylesheet" href="<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editStatusOrder.php') echo "../../css/style.css";
                                         else echo "../css/style.css";?>"  >
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@ else {require ("../db/connect-db.php");}
 </head>
 <body>
     <?php 
-    if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php') {require ("../../authModal.php");}
+    if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editStatusOrder.php') {require ("../../authModal.php");}
     else {require ("../authModal.php");} ?>
     <nav id="navCat">
         <div id="navCat1">FIZZ BOOOM</div> 
@@ -28,11 +28,11 @@ else {require ("../db/connect-db.php");}
             <input id="navSearch">
         </form>  
         <div id="navCat2">
-            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php') {echo "../index.php";}
+            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editStatusOrder.php') {echo "../index.php";}
                                 else {echo "index.php";} ?>'>Товары</a></div>
-            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php') {echo "../categories.php";}
+            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editStatusOrder.php') {echo "../categories.php";}
                                 else {echo "categories.php";} ?>'>Категории</a></div>
-            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php') {echo "../orders.php";}
+            <div><a href='<?php if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editStatusOrder.php') {echo "../orders.php";}
                                 else {echo "orders.php";} ?>'>Заказы</a></div>
         </div>
         <div id="navCat3">
@@ -49,7 +49,7 @@ else {require ("../db/connect-db.php");}
         </div>
         <?=isset($_SESSION['user'])?"<a href='../../db/exit-db.php' id='exitA'>Выйти</a>":"<div id='exitEnterButton'>Войти</div>";?>
         <?php if (isset($_SESSION['user'])) {echo "<a href=";
-               if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php') {echo "../../account.php";}
+               if ($_SERVER['PHP_SELF']=='/admin/crud/addProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/editProduct.php' || $_SERVER['PHP_SELF']=='/admin/crud/addCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editCategory.php' || $_SERVER['PHP_SELF']=='/admin/crud/editStatusOrder.php') {echo "../../account.php";}
                                 else {echo "../account.php";} echo " id='userPhotoA'><img src='../../images/userPhotos/".$user[0][4]."' id='userPhoto'></a>";}?>
     </nav>
 <script src='../../js/scriptAdm.js'></script>

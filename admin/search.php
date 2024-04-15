@@ -1,7 +1,9 @@
 
- <?php $post = isset($_POST['value'])?$_POST['value']:false;   
-       echo $post;
-        $filter = isset($_POST['value2'])?$_POST['value2']:false; ?>
+ <?php 
+ $data = $_POST['text'];
+ $post = isset($data['name'])?$data['name']:false;   
+$filter = isset($data['filters'])?$data['filters']:false; 
+?>
  <?php require ("../db/connect-db.php"); ?>
  <main>
     <div class="voidAdm"></div>
@@ -12,7 +14,9 @@
                 <option value="">все</option>
                 <?php
                 $categ = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM cathegories"));
-                foreach ($categ as $catcat) {echo "<option value='$catcat[0]'>$catcat[1]</option>";}
+                foreach ($categ as $catcat) {echo "<option value='$catcat[0]' ";
+                    if ($catcat[0]==$filter) {echo 'selected';}
+                    echo ">$catcat[1]</option>";}
                 ?>
             </select>
          </div>  
@@ -51,6 +55,21 @@
         </div>";}
     ?>
 </main>
-
+<script>
+let post = '<?php if ($post == "") {echo "0";}
+                       else echo "$post"; ?>';
+let filter = <?php if ($filter == "") {echo '0';} else echo $filter; ?>;
+$(document).ready(function() {
+  $('#navSearch').on('keyup', loc(post, filter));
+  $('#selectFilter').on('change', loc(post, filter));
+});
+var loc = function (post, filter) {
+   
+    filter =  $("#selectFilter").val();
+    post =  $("#navSearch").val();
+   
+    location.href=`index.php?post=${post}&filter=${filter}`;
+}
+</script>
 </body>
 </html>

@@ -572,6 +572,15 @@
                         font-size:1.4vmax;
                         font-family:'montserrat black';
                         color:#0E1514;}
+.rowAdmOrderInfoF {display:grid;
+                                width:100%;
+                                height:5vmax;
+                                grid-template-columns: 4.5% 35% 32% 1fr 3.5%;
+                                grid-template-rows: 100%;
+                                align-items: center;
+                                font-size:1.4vmax;
+                                font-family: 'montserrat sb';
+                                color:#0E1514;}
 .orderInfoA {color:#0E1514;
             font-size:1.2vmax;
             font-family: 'montserrat m';}

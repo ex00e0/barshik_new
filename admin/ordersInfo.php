@@ -5,6 +5,9 @@ $id_order = isset($_GET['order'])?$_GET['order']:false;
 $order_row = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM order_row WHERE id_order=$id_order"));
 $order_info = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM orders WHERE id_order=$id_order"));
 $order_date = $order_info[0][2];
+$order_sum = $order_info[0][4];
+$order_plus = $order_info[0][6];
+$order_minus = $order_info[0][5];
 ?>
 <main>
     <div class="voidAdm"></div>
@@ -21,10 +24,7 @@ $order_date = $order_info[0][2];
         <div>Количество в заказе</div>
         <div>Стоимость</div>
     </div>
-    
-    
     <?php
-
     //  $cathegories = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM cathegories"));
     foreach ($order_row as $rows) {$products = mysqli_fetch_all(mysqli_query($connect, "SELECT * FROM products WHERE id_product=$rows[2]"));
             $cat = $products[0][3];
@@ -41,6 +41,12 @@ $order_date = $order_info[0][2];
             echo "<div>$sum ₽</div>";
             echo "</div>";}
     ?>
+    <div class='rowAdmOrderInfoF'>
+        <div></div>
+        <div>Списано бонусов: <?=$order_minus?></div>
+        <div>Начислено бонусов: <?=$order_plus?></div>
+        <div>Сумма заказа: <font face='montserrat black'><?=$order_sum?> ₽</font></div>
+    </div>
 </main>
 </body>
 </html>
