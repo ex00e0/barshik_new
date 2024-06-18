@@ -1,8 +1,10 @@
 
  <?php 
  $data = $_POST['text'];
- $post = isset($data['name'])?$data['name']:false;   
-$filter = isset($data['filters'])?$data['filters']:false; 
+ $post = isset($data[1])?$data[1]:false;   
+$filter = isset($data[0])?$data[0]:false; 
+// var_dump($data);
+
 ?>
  <?php require ("../db/connect-db.php"); ?>
  <main>
@@ -56,20 +58,20 @@ $filter = isset($data['filters'])?$data['filters']:false;
     ?>
 </main>
 <script>
-let post = '<?php if ($post == "") {echo "0";}
-                       else echo "$post"; ?>';
-let filter = <?php if ($filter == "") {echo '0';} else echo $filter; ?>;
-$(document).ready(function() {
-  $('#navSearch').on('keyup', loc(post, filter));
-  $('#selectFilter').on('change', loc(post, filter));
-});
-var loc = function (post, filter) {
+// let post = '<?php if ($post == "") {echo "0";}
+//                        else echo "$post"; ?>';
+// let filter = <?php if ($filter == "") {echo '0';} else echo $filter; ?>;
+// $(document).ready(function() {
+//   $('#navSearch').on('keyup', loc(post, filter));
+//   $('#selectFilter').on('change', loc(post, filter));
+// });
+// var loc = function (post, filter) {
    
-    filter =  $("#selectFilter").val();
-    post =  $("#navSearch").val();
+//     filter =  $("#selectFilter").val();
+//     post =  $("#navSearch").val();
    
-    location.href=`index.php?post=${post}&filter=${filter}`;
-}
+//     location.href=`index.php?post=${post}&filter=${filter}`;
+// }
 </script>
 </body>
 </html>

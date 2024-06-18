@@ -4,8 +4,8 @@
 <?php  
 // $filter = $_SESSION['fise']['filters'];
 // $search = $_SESSION['fise']['name'];
-$post = ($_GET['post'] == "0")?false:$_GET['post'];
-$filter = ($_GET['filter'] == "0")?false:$_GET['filter'];
+$post = isset($_GET['post'])?(($_GET['post'] == "0")?false:$_GET['post']):false;
+$filter = isset($_GET['post'])?(($_GET['filter'] == "0")?false:$_GET['filter']):false;
 // $formdata = filter_input_array(INPUT_POST);
 // var_dump($formdata);
 
@@ -70,7 +70,8 @@ $(document).ready(function() {
 });
 
 var getDishes = function(){
-  let request_data = {'filters': $("#selectFilter").val(), 'name': $('#navSearch').val() };  
+    let request_data = [$("#selectFilter").val(), $('#navSearch').val()];
+//   let request_data = {'filters': $("#selectFilter").val(), 'name': $('#navSearch').val() };  
 //   console.log(request_data);
 $.ajax({
     url: 'search.php',         /* Куда отправить запрос */

@@ -157,7 +157,8 @@
           column-gap:8%;
           justify-items:center;
           align-items:center;}
-#navCat3 svg {height:27%;}
+#navCat3 a {height:27%;}
+#navCat3 svg {height:100%;}
 #navSearchIcon {grid-column:3;
                 align-self:center;
                 justify-self:center;
@@ -604,3 +605,36 @@
                 padding-left:2.5%;
                 font-family: "montserrat m";
                 border-radius:100vmax;}
+
+/*корзина*/
+.rowAdmCart {display:grid;
+        width:100%;
+        height:5vmax;
+        grid-template-columns: 4.5% 5% 15% 18% 17% 13% 1fr 1fr 1fr 3.5%;
+        grid-template-rows: 100%;
+        align-items: center;
+        font-size:1.2vmax;
+        color:#0E1514;}
+.actionCart {grid-column:8/10;
+            justify-self:center;}
+.cartA {justify-self: center;
+                width:35%;}
+.cartDelete {grid-column:7;
+           background-color: #bb3845;
+            color:white;
+            border:none;
+            height:70%;
+            width:140%;
+            font-size: 1.1vmax;
+            border-radius: 100vmax;
+            font-family: "montserrat sb";}
+.cartBuy {grid-column:9;
+        justify-self:end;
+                background-color: #0DB295;
+                 color:white;
+                 border:none;
+                 height:70%;
+                 width:140%;
+                 font-size: 1.1vmax;
+                 border-radius: 100vmax;
+                 font-family: "montserrat sb";}

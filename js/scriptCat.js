@@ -1,14 +1,14 @@
 //модальное окно 1 товара
-let modalClose = document.getElementsByClassName("modalClose")[0];
-let cardCatR3C2 = document.getElementsByClassName("cardCatR3C2");
-let modalShadow = document.getElementsByClassName("modalShadow")[1];
-let modal = document.getElementsByClassName("modal")[0];
-let scrollHeight = document.body.scrollHeight;
-modalShadow.style.height=`${scrollHeight}px`; 
-modalClose.addEventListener("click", function () {modalShadow.style.display='none';
-                                                modal.style.display='none';} );
-for (let i=0;i<cardCatR3C2.length;i++) {cardCatR3C2[i].addEventListener("click", function () {modalShadow.style.display='block';
-                                                                                            modal.style.display='grid';} );}
+// let modalClose = document.getElementsByClassName("modalClose")[0];
+// let cardCatR3C2 = document.getElementsByClassName("cardCatR3C2");
+// let modalShadow = document.getElementsByClassName("modalShadow")[1];
+// let modal = document.getElementsByClassName("modal")[0];
+// let scrollHeight = document.body.scrollHeight;
+// modalShadow.style.height=`${scrollHeight}px`; 
+// modalClose.addEventListener("click", function () {modalShadow.style.display='none';
+//                                                 modal.style.display='none';} );
+// for (let i=0;i<cardCatR3C2.length;i++) {cardCatR3C2[i].addEventListener("click", function () {modalShadow.style.display='block';
+//                                                                                             modal.style.display='grid';} );}
 
 //для авторизации
 let modalShadowAuth = document.getElementsByClassName("modalShadow")[0];

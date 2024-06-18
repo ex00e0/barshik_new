@@ -1,8 +1,8 @@
 <?php require ("headerAdm.php"); ?>
 <?php require ("../db/connect-db.php"); ?>
 <?php  
-$post = ($_GET['post'] == "0")?false:$_GET['post'];
-$filter = ($_GET['filter'] == "0")?false:$_GET['filter'];
+$post = isset($_GET['post'])?(($_GET['post'] == "0")?false:$_GET['post']):false;
+$filter = isset($_GET['post'])?(($_GET['filter'] == "0")?false:$_GET['filter']):false;
 ?>
 <!-- <script>
     let search = '';

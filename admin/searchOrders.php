@@ -3,7 +3,7 @@
  $post = isset($data['name'])?$data['name']:false;   
 $filter = isset($data['filters'])?$data['filters']:false; 
 ?>
-
+ <?php require ("../db/connect-db.php"); ?>
 <main>
     <div class="voidAdm"></div>
     <div class='rowAdmTovar'>
@@ -56,7 +56,7 @@ $filter = isset($data['filters'])?$data['filters']:false;
 <script>
 let post = '<?php if ($post == "") {echo "0";}
                        else echo "$post"; ?>';
-let filter = <?php if ($filter == "") {echo '0';} else echo $filter; ?>;
+let filter = '<?php if ($filter == "") {echo '0';} else echo "$filter"; ?>';
 $(document).ready(function() {
   $('#navSearch').on('keyup', loc(post, filter));
   $('#selectFilter').on('change', loc(post, filter));
